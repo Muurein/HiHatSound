@@ -1,0 +1,193 @@
+.open-sans-mainfont {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+  background-color: #F5F3EC; /*secondary color*/
+  color: #413636; /*tertiary color*/
+  font-family: Open Sans, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+h1 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+
+
+
+/**************************************************************************************
+    MAIN MENU
+***************************************************************************************/
+.main-header {
+    background: #B48F74; /*primary color */
+    color: #FFFFFF;  /*menu-text-color*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Rad med logga + hamburger */
+.header-visible {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+    
+} 
+
+/* företagsutseende */
+.branding-a {
+    max-width: 100%;
+    margin-left: 50px;
+    list-style-type: none;
+}
+
+.logo {
+    width: 170px;
+    height: 120px;
+}
+
+/* .company-name {
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: 3px;
+    font-weight: 300;
+} */
+
+/* hamburgemeny*/
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 40px;
+    border: none;
+    width: 45px;
+    height: 30px;
+    background: none;
+    cursor: pointer;
+}
+
+.hamburger-lines {
+    border-radius: 2px;
+    height: 4px;
+    width: 100%;
+    background-color: #FFFFFF;   
+}
+
+
+/* huvudmeny utan hamburgemeny */
+.main-menu {
+    display: none;
+    background-color: #B48F74; /*primary color */;
+    color: #FFFFFF;  /*menu-text-color*/
+}
+
+.menu {
+    list-style: none;
+    text-align: center;
+}
+
+.menu-item a {
+    display: block;
+    /* padding: 12px 20px;
+    font-size: 16px;
+    color: #FFFFFF;  
+    text-decoration: none; */
+    padding-right: 30px;
+    text-align: center;
+    height: 60px;
+    color: #FFFFFF;  /*menu-text-color*/
+    line-height: 60px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+/* visar vilken sida användaren är på */
+.current-menu-item {
+    text-decoration: underline;
+}
+
+.menu-item a:hover {
+    background-color: #413636;
+    color: white;
+}
+
+.current-menu-item:hover {
+    color: white;
+}
+
+
+/* Öppen meny */
+.main-menu.open {
+    display: block;
+}
+
+
+/**************************************************************************************
+***************************************************************************************
+    LARGE SCREENS
+***************************************************************************************
+***************************************************************************************/
+@media (min-width: 1024px) {
+
+    /**************************************************************************************
+        MAIN MENU
+    ***************************************************************************************/
+     /* huvudmeny och hamburgemeny */
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-visible {
+        justify-content: flex-start;
+    }
+
+    .hamburger
+    {
+        display: none;
+    }
+
+    .main-menu {
+        display: inline-block;
+        padding-right: 60px;
+    }
+
+    .menu {
+        display: flex;
+        
+    }
+
+    .menu-item a:hover {
+        border-radius: 30px;
+        background-color: #413636;
+        color: white;
+    }
+}
