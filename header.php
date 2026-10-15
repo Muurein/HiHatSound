@@ -6,14 +6,7 @@
     <title><?php bloginfo('name'); ?></title>
     <!--<base href="/">-->
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-<?php
-echo '<!-- TEMASÖKVÄG: ' . get_template_directory() . ' -->';
-echo '<!-- JAVASCRIPT-FIL: ' .
-    get_template_directory() . '/javascript/main.js -->';
-?>
-<?php
-echo '<!-- TEMA-URL: ' . get_template_directory_uri() . ' -->';
-?>
+
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="<?php get_template_directory_uri(); ?>/css/images/HiHat_favicon_white.png">
 

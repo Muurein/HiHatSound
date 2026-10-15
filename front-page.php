@@ -14,20 +14,30 @@
     <div class="info-section">
 
         <div class="info-flexbox">
-            <!--Poddklippnings-->
-            <article class="info-article">
-                <div class="info-image-div">
-                    <img class="info-image" ngSrc="assets/images/edit_program.png" width="300" height="350" alt="ett ljudmixerprogram" priority >
-                </div>
+            <?php
+                query_posts('category_name=startsida-services&posts_per_page=2');
+                if(have_posts()) {
+                    while(have_posts()) {
+                        the_post();
+                        ?>
 
-                <h2>Poddklippning</h2>
-                <p>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in <a routerLink="/podd">reprehenderi</a>.
-                </p>
-            </article>
+                    <article class="info-article">
+                
+                        <div class="info-image-div">
+                            <?php the_post_thumbnail('info-image-small'); ?>
+                        </div>
+                            
+                        <h2><?php the_title(); ?></h2>
+                        <p><?php the_content(); ?></p> <!--gör kanske om till en div, har det i kattcaf+eet och det är nog av en anledning-->
+
+                    </article>
+                    <?php
+                    }
+                }
+            ?>
             
             <!--Eventplanering-->
-            <article class="info-article">
+            <!-- <article class="info-article">
                 <div class="info-image-div">
                     <img class="info-image" ngSrc="assets/images/event-png.png" width="300" height="350" alt="ett event" >
                 </div>
@@ -36,11 +46,11 @@
                 <p>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in <a routerLink="/event">reprehenderi</a>.
                 </p>
-            </article>
+            </article> -->
         </div>
     </div>
 
-    <img class="decoration-image" ngSrc="assets/images/mixerbord1.png" width="1920" height="400" alt="En person pratar in i en mick i en studio">
+    <img class="decoration-image" src="<?php echo get_template_directory_uri(); ?>/css/images/mixerbord1.png" alt="ett mixerbord">
 
     <article class="home-course-article">
         <h2>Kurs i poddklippning</h2>
